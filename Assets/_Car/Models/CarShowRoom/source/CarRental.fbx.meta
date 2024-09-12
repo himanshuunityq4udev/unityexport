@@ -1,0 +1,299 @@
+fileFormatVersion: 2
+guid: e66affd08e03f9146bfed7e754be5518
+ModelImporter:
+  serializedVersion: 22200
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Car_wheels01
+    second: {fileID: 2100000, guid: 42713f60083c276438df5d5d4c36f8f0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Car_wheels02
+    second: {fileID: 2100000, guid: c3335c416c4562c4db53065fbdc20e1d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Car_wheels03
+    second: {fileID: 2100000, guid: cddc7c2f58cec94469da3c988f1684ab, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_TV_plastic_black
+    second: {fileID: 2100000, guid: fc8440a666587f74da8b72b2c0307f8e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_TV_screen
+    second: {fileID: 2100000, guid: 4b49172815036074dba164d0381eb073, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_black_carrental
+    second: {fileID: 2100000, guid: 380b06c9315fb6e46992888a9afec95a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_black_metal
+    second: {fileID: 2100000, guid: aad0f06720dd74940a61ddadd6b0dae0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_black_plastic
+    second: {fileID: 2100000, guid: cf7fedd66211a7d4ab8879149e451812, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_boli
+    second: {fileID: 2100000, guid: 786c94094b323ef47bde31c6096a3577, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_bookset04
+    second: {fileID: 2100000, guid: 241d997f56bdfab4ca24516a8dcd25ef, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_bookset05
+    second: {fileID: 2100000, guid: e8840189c38e81f4abbf7d47ca2ca6a8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_bookset06
+    second: {fileID: 2100000, guid: baa91f95c8453ae409a9fd65bfa7f95f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_carpet
+    second: {fileID: 2100000, guid: 2138f8ebfeed8b8479d908b6a6d58e67, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_carrental_innerdiban
+    second: {fileID: 2100000, guid: f2698059db5b8354a936c42be36b6f49, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_carrental_lamp
+    second: {fileID: 2100000, guid: 71c2389bedf40204ba84e3d41b6d7e25, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_carrental_logo
+    second: {fileID: 2100000, guid: 46ee967e2117bde43bf72a80dd05e2cd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_door_wood
+    second: {fileID: 2100000, guid: 44639d2822893d74b93c4648371978bc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_faguang
+    second: {fileID: 2100000, guid: e62393f7b5635284ea7615e3f594ce3f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_globe
+    second: {fileID: 2100000, guid: 65d0ed0b719ba104890fb48336ffc2d9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_gold
+    second: {fileID: 2100000, guid: 3db4613419df2394d9897c393dbbd225, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_mac_keyboard
+    second: {fileID: 2100000, guid: 1cc0e65a96828c64195275277e58f7f6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_mac_screen
+    second: {fileID: 2100000, guid: d4a73599b9a45c641b2eb558c001c7e5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_metal
+    second: {fileID: 2100000, guid: a991bd089fd8b7440bdec0e7b05cc3a6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_pavment_carrental
+    second: {fileID: 2100000, guid: ca7940f40194e8e46bc82e68ebfd3afe, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_road_carrental
+    second: {fileID: 2100000, guid: abcb90cd568c25c4986780165b2b80ec, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_shuye
+    second: {fileID: 2100000, guid: 79e520a1bf43c1d4cbefc55d9b1ac1cc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_sofa
+    second: {fileID: 2100000, guid: 67d12502f53818444b7ef46dca0f48ff, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_wall
+    second: {fileID: 2100000, guid: 39029e70b1eed044893c62efd2df3757, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_wall_brick
+    second: {fileID: 2100000, guid: 44422e3c6158f1e4eb89c181ce9328e5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_white_plastic
+    second: {fileID: 2100000, guid: 0c5ef963b5afd6e41b7b31a1408e9d39, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_wood_desk
+    second: {fileID: 2100000, guid: c4ef430c70279234cadcaf113a127318, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_wood_desk02_carrental
+    second: {fileID: 2100000, guid: 0dc99b9d2d49bca4f8b4e988086a5184, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_wood_desk_carrental
+    second: {fileID: 2100000, guid: e8fff910e6c02b84caf3615494b3fd96, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_wood_panel
+    second: {fileID: 2100000, guid: 30a6b770ba035be4da16af51dcab4d88, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_wood_shelf_carrental
+    second: {fileID: 2100000, guid: 3ef0999998c2e6e4f99feeb3811887b4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_xiangkuang
+    second: {fileID: 2100000, guid: e0e8cda662208904ca467ee4727d04d9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_yellow_carrental
+    second: {fileID: 2100000, guid: 4f328d720e8d7ef459d94c98afe03478, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_yizi_carrental
+    second: {fileID: 2100000, guid: 8ecaeb0557fbab340b2719ed29f25b71, type: 2}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    strictVertexDataChecks: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  importBlendShapeDeformPercent: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
