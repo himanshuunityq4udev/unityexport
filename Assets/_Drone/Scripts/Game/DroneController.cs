@@ -14,8 +14,6 @@ namespace RDC
 
         //Drone Configation 
         [SerializeField] private DroneConfig droneConfig;
-        public float minMaxPitch = 30;
-        public float minMaxRoll = 30;
         //Input value
         private float _rotationFinalPitch;
         private float _rotationFinalRoll;
@@ -112,21 +110,15 @@ namespace RDC
             float pitch = input.Cyclic.y * droneConfig.minMaxPitch;
             float roll = -input.Cyclic.x * droneConfig.minMaxRoll;
 
-            float movementPitch = input.Cyclic.y * minMaxPitch;
-            float movmentRoll = -input.Cyclic.x * minMaxRoll;
-          
-
             yaw += input.Pedals * droneConfig.yawPower;
 
             // Smooth transitions for pitch, roll, and yaw
             _rotationFinalPitch = Mathf.Lerp(_rotationFinalPitch, pitch, droneConfig.lerpSpeed * Time.deltaTime);
             _rotationFinalRoll = Mathf.Lerp(_rotationFinalRoll, roll, droneConfig.lerpSpeed * Time.deltaTime);
             _finalYaw = Mathf.Lerp(_finalYaw, yaw, droneConfig.lerpSpeed * Time.deltaTime);
-      
-            DroneRigidbody.AddForce(Vector3.forward* movementPitch, ForceMode.Acceleration);
-            DroneRigidbody.AddForce(Vector3.right * - movmentRoll, ForceMode.Acceleration);
-         
-            
+
+
+     
             if (canRotate)
             {
                 RotateDrone(_rotationFinalPitch, _finalYaw, _rotationFinalRoll);
