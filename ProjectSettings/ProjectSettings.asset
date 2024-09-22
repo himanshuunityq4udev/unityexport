@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: DefaultCompany
-  productName: Unity Export
+  productName: UnityExport
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -81,7 +81,7 @@ PlayerSettings:
   macRetinaSupport: 1
   runInBackground: 1
   captureSingleScreen: 0
-  muteOtherAudioSources: 0
+  muteOtherAudioSources: 1
   Prepare IOS For Recording: 0
   Force IOS Speakers When Recording: 0
   deferSystemGesturesMode: 0
@@ -170,8 +170,8 @@ PlayerSettings:
     tvOS: 0
   overrideDefaultApplicationIdentifier: 0
   AndroidBundleVersionCode: 44
-  AndroidMinSdkVersion: 22
-  AndroidTargetSdkVersion: 0
+  AndroidMinSdkVersion: 24
+  AndroidTargetSdkVersion: 34
   AndroidPreferredInstallLocation: 1
   aotOptions: 
   stripEngineCode: 1
@@ -260,7 +260,7 @@ PlayerSettings:
   useCustomGradlePropertiesTemplate: 0
   useCustomGradleSettingsTemplate: 0
   useCustomProguardFile: 0
-  AndroidTargetArchitectures: 5
+  AndroidTargetArchitectures: 7
   AndroidTargetDevices: 0
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
@@ -440,7 +440,7 @@ PlayerSettings:
     m_APIs: 10000000
     m_Automatic: 1
   - m_BuildTarget: AndroidPlayer
-    m_APIs: 0b00000008000000
+    m_APIs: 0b000000
     m_Automatic: 0
   m_BuildTargetVRSettings: []
   m_DefaultShaderChunkSizeInMB: 16
@@ -843,7 +843,7 @@ PlayerSettings:
   hmiLogStartupTiming: 0
   hmiCpuConfiguration: 
   apiCompatibilityLevel: 6
-  activeInputHandler: 2
+  activeInputHandler: 0
   windowsGamepadBackendHint: 0
   cloudProjectId: 
   framebufferDepthMemorylessMode: 0

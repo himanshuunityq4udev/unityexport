@@ -75,8 +75,11 @@ namespace UnityTemplateProjects
         public bool invertY = false;
 
         //Himanshu -----------------------
-        [Tooltip("Stop vertical movement")]
-        public bool canMoveVerticale = true;
+        [Tooltip("Stop vertical rotation")]
+        public bool canMoveVerticale = false;
+
+        [Tooltip("Stop movement")]
+        public bool canMove = false;
         //Himanshu
 
 #if ENABLE_INPUT_SYSTEM
@@ -204,6 +207,12 @@ namespace UnityTemplateProjects
                     m_TargetCameraState.pitch += mouseMovement.y * mouseSensitivityFactor;
                 }
             }
+            // Touch Rotation
+            if (IsTouchRotationAllowed())
+            {
+                var touchMovement = GetTouchLookRotation() * Time.deltaTime * 5;
+                m_TargetCameraState.yaw += touchMovement.x;
+            }
 
             // Translation
             var translation = GetInputTranslationDirection() * Time.deltaTime;
@@ -218,8 +227,10 @@ namespace UnityTemplateProjects
             boost += GetBoostFactor();
             translation *= Mathf.Pow(2.0f, boost);
 
-            m_TargetCameraState.Translate(translation);
-
+            if (canMove)
+            {
+                m_TargetCameraState.Translate(translation);
+            }
             // Framerate-independent interpolation
             // Calculate the lerp amount, such that we get 99% of the way to our target in the specified time
             var positionLerpPct = 1f - Mathf.Exp((Mathf.Log(1f - 0.99f) / positionLerpTime) * Time.deltaTime);
@@ -245,6 +256,16 @@ namespace UnityTemplateProjects
 #else
             return new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y")) * 10;
 #endif
+        }
+
+        Vector2 GetTouchLookRotation()
+        {
+            if (Input.touchCount == 1)
+            {
+                Touch touch = Input.GetTouch(0);
+                return touch.deltaPosition;
+            }
+            return Vector2.zero;
         }
 
         bool IsBoostPressed()
@@ -295,6 +316,11 @@ namespace UnityTemplateProjects
 #else
             return Input.GetMouseButtonUp(1);
 #endif
+        }
+
+        bool IsTouchRotationAllowed()
+        {
+            return Input.touchCount == 1;
         }
 
     }

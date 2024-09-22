@@ -2,9 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Direction
+namespace RDC
 {
-        private static  Vector2[] directions = new Vector2[]
+    public class Direction
+    {
+        private static Vector2[] directions = new Vector2[]
          {
                             new Vector2(1, 0),    // left
                             new Vector2(-1, 0),   // right
@@ -13,5 +15,6 @@ public class Direction
 
         };
 
-    public static  Vector2[] Directions => directions;
+        public static Vector2[] Directions => directions;
+    }
 }
