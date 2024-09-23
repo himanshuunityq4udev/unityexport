@@ -80,6 +80,7 @@ namespace UnityTemplateProjects
 
         [Tooltip("Stop movement")]
         public bool canMove = false;
+
         //Himanshu
 
 #if ENABLE_INPUT_SYSTEM
@@ -168,8 +169,7 @@ namespace UnityTemplateProjects
         }
 
         void Update()
-        {
-            // Exit Sample  
+        { 
 
             if (IsEscapePressed())
             {
@@ -238,6 +238,12 @@ namespace UnityTemplateProjects
             m_InterpolatingCameraState.LerpTowards(m_TargetCameraState, positionLerpPct, rotationLerpPct);
 
             m_InterpolatingCameraState.UpdateTransform(transform);
+
+            if(!IsCameraRotationAllowed() | !IsTouchRotationAllowed()) 
+            {
+                
+            }
+
         }
 
         float GetBoostFactor()

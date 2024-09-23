@@ -103,8 +103,7 @@ public class VolumeSettings : MonoBehaviour
         {
             if (soundLibrary.audioName == _audioName)
             {
-                int random = Random.Range(0, soundLibrary.audioClips.Length - 1);
-                return soundLibrary.audioClips[random];
+                return soundLibrary.audioClips;
             }
         }
         return null;

@@ -1,22 +1,18 @@
-using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
-[RequireComponent(typeof(AudioSource), typeof(CanvasGroup))]
+[RequireComponent(typeof(CanvasGroup))]
 [DisallowMultipleComponent]
 public class Page : MonoBehaviour
 {
-    private AudioSource AudioSource;
+    SoundManager soundManager;
     private RectTransform RectTransform;
     private CanvasGroup CanvasGroup;
 
     [SerializeField]
     private float AnimationSpeed = 1f;
     public bool ExitOnNewPagePush = false;
-    [SerializeField]
-    private AudioClip EntryClip;
-    [SerializeField]
-    private AudioClip ExitClip;
+
     [SerializeField]
     private EntryMode EntryMode = EntryMode.SLIDE;
     [SerializeField]
@@ -35,18 +31,13 @@ public class Page : MonoBehaviour
     private UnityEvent PostPopAction;
 
     private Coroutine AnimationCoroutine;
-    private Coroutine AudioCoroutine;
+   
 
     private void Awake()
     {
         RectTransform = GetComponent<RectTransform>();
         CanvasGroup = GetComponent<CanvasGroup>();
-        AudioSource = GetComponent<AudioSource>();
-
-        AudioSource.playOnAwake = false;
-        AudioSource.loop = false;
-        AudioSource.spatialBlend = 0;
-        AudioSource.enabled = false;
+        soundManager = FindObjectOfType<SoundManager>();    
     }
 
     public void ResetFadeEffect()
@@ -101,7 +92,7 @@ public class Page : MonoBehaviour
         }
         AnimationCoroutine = StartCoroutine(AnimationHelper.SlideIn(RectTransform, EntryDirection, AnimationSpeed, PostPushAction));
 
-       // PlayEntryClip(PlayAudio);
+        soundManager.EnterPlayClip(PlayAudio);
     }
 
     private void SlideOut(bool PlayAudio)
@@ -112,7 +103,7 @@ public class Page : MonoBehaviour
         }
         AnimationCoroutine = StartCoroutine(AnimationHelper.SlideOut(RectTransform, ExitDirection, AnimationSpeed, PostPopAction));
 
-       // PlayExitClip(PlayAudio);
+        soundManager.ExitPlayClip(PlayAudio);
     }
     
     private void ZoomIn(bool PlayAudio)
@@ -123,7 +114,7 @@ public class Page : MonoBehaviour
         }
         AnimationCoroutine = StartCoroutine(AnimationHelper.ZoomIn(RectTransform, AnimationSpeed, PostPushAction));
 
-       // PlayEntryClip(PlayAudio);
+        soundManager.EnterPlayClip(PlayAudio);
     }
 
     private void ZoomOut(bool PlayAudio)
@@ -134,7 +125,7 @@ public class Page : MonoBehaviour
         }
         AnimationCoroutine = StartCoroutine(AnimationHelper.ZoomOut(RectTransform, AnimationSpeed, PostPopAction));
 
-       // PlayExitClip(PlayAudio);
+        soundManager.ExitPlayClip(PlayAudio);
     }
 
     private void FadeIn(bool PlayAudio)
@@ -145,7 +136,7 @@ public class Page : MonoBehaviour
         }
         AnimationCoroutine = StartCoroutine(AnimationHelper.FadeIn(CanvasGroup, AnimationSpeed, PostPushAction));
 
-       // PlayEntryClip(PlayAudio);
+        soundManager.EnterPlayClip(PlayAudio);
     }
 
     private void FadeOut(bool PlayAudio)
@@ -156,45 +147,8 @@ public class Page : MonoBehaviour
         }
         AnimationCoroutine = StartCoroutine(AnimationHelper.FadeOut(CanvasGroup, AnimationSpeed, PostPopAction));
 
-      //  PlayExitClip(PlayAudio);
+        soundManager.ExitPlayClip(PlayAudio);
     }
 
-    private void PlayEntryClip(bool PlayAudio)
-    {
-        if (PlayAudio && EntryClip != null && AudioSource != null)
-        {
-            if (AudioCoroutine != null)
-            {
-                StopCoroutine(AudioCoroutine);
-            }
-
-          //  AudioCoroutine = StartCoroutine(PlayClip(EntryClip));
-        }
-    }
-    
-    private void PlayExitClip(bool PlayAudio)
-    {
-        if (PlayAudio && ExitClip != null && AudioSource != null)
-        {
-            if (AudioCoroutine != null)
-            {
-                StopCoroutine(AudioCoroutine);
-            }
-
-          //  AudioCoroutine = StartCoroutine(PlayClip(ExitClip));
-        }
-    }
-
-    private IEnumerator PlayClip(AudioClip Clip)
-    {
-        AudioSource.enabled = true;
-
-        WaitForSeconds Wait = new WaitForSeconds(Clip.length);
-
-        AudioSource.PlayOneShot(Clip);
-
-        yield return Wait;
-
-       // AudioSource.enabled = false;
-    }
+   
 }
