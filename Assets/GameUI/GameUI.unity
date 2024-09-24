@@ -4761,7 +4761,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 6211089454687262803, guid: 5c098798a2949f9459b75012a0deab39,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: 8ea15c6a871b73c41953d07e3a9a92e5, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -4911,7 +4911,6 @@ GameObject:
   m_Component:
   - component: {fileID: 732834176}
   - component: {fileID: 732834175}
-  - component: {fileID: 732834177}
   - component: {fileID: 732834174}
   m_Layer: 0
   m_Name: SoundManager
@@ -4932,13 +4931,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12061d6619fe4d0448b02436eb66a59d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioMixer: {fileID: 0}
-  EntryClip: {fileID: 0}
-  ExitClip: {fileID: 0}
-  sfxaudioSource: {fileID: 0}
-  musicAudioSource: {fileID: 0}
-  musicSlider: {fileID: 0}
-  sfxSlider: {fileID: 0}
+  audioMixer: {fileID: 24100000, guid: 5c098798a2949f9459b75012a0deab39, type: 2}
+  sfxaudioSource: {fileID: 732834175}
+  musicAudioSource: {fileID: 727578183}
+  musicSlider: {fileID: 1314841329}
+  sfxSlider: {fileID: 1659199045}
 --- !u!82 &732834175
 AudioSource:
   m_ObjectHideFlags: 0
@@ -4950,7 +4947,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 5517434556461295337, guid: 5c098798a2949f9459b75012a0deab39,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: 7be6d4f08103f2746b1acdb781bfd00d, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 0.5
   m_Pitch: 1
@@ -5052,32 +5049,6 @@ Transform:
   - {fileID: 727578182}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &732834177
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 732834173}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3d647d1e2277ae4d9c8c36958054791, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audioMixer: {fileID: 24100000, guid: 5c098798a2949f9459b75012a0deab39, type: 2}
-  musicSlider: {fileID: 1314841329}
-  sfxSlider: {fileID: 1659199045}
-  musicSource: {fileID: 727578183}
-  sfxSource: {fileID: 732834175}
-  vibration: {fileID: 151377339}
-  soundLibraries:
-  - audioName: SlideIn
-    audioClips: {fileID: 8300000, guid: 7be6d4f08103f2746b1acdb781bfd00d, type: 3}
-  - audioName: SlideOut
-    audioClips: {fileID: 8300000, guid: a6d7b18e5633e504c8c99cf76167f52c, type: 3}
-  musicLibraries:
-  - trackName: BackGround
-    audioClip: {fileID: 8300000, guid: 8ea15c6a871b73c41953d07e3a9a92e5, type: 3}
 --- !u!1 &754215144
 GameObject:
   m_ObjectHideFlags: 0
@@ -5336,6 +5307,58 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!1 &790803531
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 790803533}
+  - component: {fileID: 790803532}
+  m_Layer: 0
+  m_Name: Refrence
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &790803532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 790803531}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3d647d1e2277ae4d9c8c36958054791, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundLibraries:
+  - audioName: SlideIn
+    audioClips: {fileID: 8300000, guid: 7be6d4f08103f2746b1acdb781bfd00d, type: 3}
+  - audioName: SlideOut
+    audioClips: {fileID: 8300000, guid: a6d7b18e5633e504c8c99cf76167f52c, type: 3}
+  musicLibraries:
+  - trackName: BackGround
+    audioClip: {fileID: 8300000, guid: 8ea15c6a871b73c41953d07e3a9a92e5, type: 3}
+--- !u!4 &790803533
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 790803531}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &816627508
 GameObject:
   m_ObjectHideFlags: 0
@@ -9412,19 +9435,7 @@ MonoBehaviour:
   m_Value: 0.444
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 732834174}
-        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
-        m_MethodName: SetMusicVolume
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &1322357459
 GameObject:
   m_ObjectHideFlags: 0
@@ -11674,19 +11685,7 @@ MonoBehaviour:
   m_Value: 0.033
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 732834174}
-        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
-        m_MethodName: SetSFXVolume
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &1682737196
 GameObject:
   m_ObjectHideFlags: 0
@@ -14957,3 +14956,4 @@ SceneRoots:
   - {fileID: 256384408}
   - {fileID: 1125870168}
   - {fileID: 732834176}
+  - {fileID: 790803533}
