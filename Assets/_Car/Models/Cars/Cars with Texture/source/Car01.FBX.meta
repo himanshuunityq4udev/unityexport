@@ -3,7 +3,17 @@ guid: 269d24472d7dc0948bcb7ffce783088c
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CarTex_1
+    second: {fileID: 2100000, guid: aeede86595fe30a4db2dcb2ef4dcb0c0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WheelTex
+    second: {fileID: 2100000, guid: 02ef382d8da353345abdb3e71cdccc17, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

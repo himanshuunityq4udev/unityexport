@@ -39,7 +39,6 @@ public class SoundManager : MonoBehaviour, ISoundManager
 
         if (!PlayerPrefs.HasKey("musicVolume"))
         {
-            Debug.Log("NO Data");
             PlayerPrefs.SetFloat("musicVolume", 1);
             PlayerPrefs.SetFloat("sfxVolume", 1);
             PlayerPrefs.SetInt("Vibration", 1);
@@ -49,12 +48,10 @@ public class SoundManager : MonoBehaviour, ISoundManager
     {
         if (PlayerPrefs.HasKey("musicVolume"))
         {
-            Debug.Log("DiscardVolume");
             DiscardVolume();
         }
         else
         {
-            Debug.Log("SetMusicVolume and SetSFXVolume");
             SetMusicVolume();
             SetSFXVolume();
         }
@@ -132,22 +129,17 @@ public class SoundManager : MonoBehaviour, ISoundManager
 
     public void SetMusicVolume()
     {
-        Debug.Log("SetMusicVolume");
         float volume = musicSlider.value;
         audioMixer.SetFloat("music", Mathf.Log10(volume) * 20);
-        //PlayerPrefs.SetFloat("musicVolume", volume);
     }
     public void SetSFXVolume()
     {
-        Debug.Log("SetSFXVolume");
         float sfxVolume = sfxSlider.value;
         audioMixer.SetFloat("sfx", Mathf.Log10(sfxVolume) * 20);
-        //PlayerPrefs.SetFloat("sfxVolume", sfxVolume);
     }
 
     public void SaveVolume()
     {
-        Debug.Log("SaveVolume");
         float volume = musicSlider.value;
         audioMixer.SetFloat("music", Mathf.Log10(volume) * 20);
         PlayerPrefs.SetFloat("musicVolume", volume);
@@ -159,7 +151,6 @@ public class SoundManager : MonoBehaviour, ISoundManager
 
     public void DiscardVolume()
     {
-        Debug.Log("DiscardVolume");
         musicSlider.value = PlayerPrefs.GetFloat("musicVolume");
         sfxSlider.value = PlayerPrefs.GetFloat("sfxVolume");
         SetMusicVolume();
@@ -191,7 +182,7 @@ public class SoundManager : MonoBehaviour, ISoundManager
      }*/
 
 
-    public void DiscardVibration()
+   /* public void DiscardVibration()
     {
 
         if (PlayerPrefs.GetInt("Vibration") == 1)
@@ -202,7 +193,7 @@ public class SoundManager : MonoBehaviour, ISoundManager
         {
             vibration.isOn = false;
         }
-    }
+    }*/
 
     public void SaveplayerVibration()
     {
