@@ -10,5 +10,5 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2d61337538f73a74281d3f9d69b99917, type: 3}
-  m_Name: SFXSlider
+  m_Name: SelectButton
   m_EditorClassIdentifier: 

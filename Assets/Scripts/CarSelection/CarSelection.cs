@@ -9,9 +9,13 @@ public class CarSelection : MonoBehaviour
     [Header("Navigation Buttons")]
     [SerializeField] private Button previousButton;
     [SerializeField] private Button nextButton;
-    [SerializeField] private Transform carHolder;
-  
+    [SerializeField] private Button SelectButton;
+    [SerializeField] private Button UnlockButton;
+    [SerializeField] private TMP_Text carPriceText;
     [SerializeField]SoundManager soundManager;
+    [SerializeField] CarHoler carHolder;
+    [SerializeField] Transform carHolderParent;
+
 
     [Header("Car Attributes")]
     private int currentCar = 0;
@@ -20,6 +24,7 @@ public class CarSelection : MonoBehaviour
     {
         soundManager = FindObjectOfType<SoundManager>();
         SelectCar(currentCar);
+        
     }
 
     void Start()
@@ -27,34 +32,40 @@ public class CarSelection : MonoBehaviour
         // Add listeners to the sliders
         previousButton.onClick.AddListener(delegate { ChangeCar(-1); });
         nextButton.onClick.AddListener(delegate { ChangeCar(1); });
+
+        
+
     }
 
     private void SelectCar(int _index)
     {
         previousButton.interactable = (_index != 0);
-        nextButton.interactable = (_index != carHolder.childCount - 1);
+        nextButton.interactable = (_index != carHolderParent.childCount - 1);
+        carPriceText.text = carHolder.carsPrice[currentCar].ToString();
 
-        for (int i = 0; i < carHolder.childCount; i++)
+        if (carHolder.unlockedCard[currentCar])
         {
-            carHolder.GetChild(i).gameObject.SetActive(i == _index);
+            SelectButton.gameObject.SetActive(true);
+            UnlockButton.gameObject.SetActive(false);
+
+        }
+        else
+        {
+            UnlockButton.gameObject.SetActive(true);
+            SelectButton.gameObject.SetActive(false);
+        }
+
+        for (int i = 0; i < carHolderParent.childCount; i++)
+        {
+            carHolderParent.GetChild(i).gameObject.SetActive(i == _index);
+            
         }
     }
 
     public void ChangeCar(int _change)
     {
-        Debug.Log(_change + currentCar);
         currentCar += _change;
         SelectCar(currentCar);
         soundManager.EnterPlayClip(true);
-       
-        /*if (currentCar > carHolder.childCount - 1)
-        {
-            currentCar = 0;
-            
-        }
-        else if (currentCar < 0)
-        {
-            currentCar = carHolder.childCount - 1;
-        }*/
     }
 }

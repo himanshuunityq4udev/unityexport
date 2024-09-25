@@ -3,11 +3,7 @@ using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
 
-public enum SoundType
-{
-    Background,
 
-}
 [RequireComponent(typeof(AudioSource))]
 public class SoundManager : MonoBehaviour, ISoundManager
 {
@@ -16,6 +12,7 @@ public class SoundManager : MonoBehaviour, ISoundManager
     private AudioClip EntryClip;
     private AudioClip ExitClip;
     private AudioClip musicClip;
+
 
     [SerializeField] private AudioSource sfxaudioSource;
     [SerializeField] private AudioSource musicAudioSource;
@@ -44,6 +41,8 @@ public class SoundManager : MonoBehaviour, ISoundManager
             PlayerPrefs.SetInt("Vibration", 1);
         }
     }
+
+
     private void Start()
     {
         if (PlayerPrefs.HasKey("musicVolume"))
