@@ -8,4 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/GameUI/GameUI.unity
     guid: 0dcd3b4876a594e4f9453f74e8e2f278
+  - enabled: 1
+    path: Assets/_Car/Scenes/Test.unity
+    guid: dc874f2e610eeb74dbf39022ee85b157
   m_configObjects: {}

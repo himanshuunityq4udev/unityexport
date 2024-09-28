@@ -1,28 +1,31 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-[CreateAssetMenu(menuName = "Events/GameEvents")]
-public class GameEvent :ScriptableObject
+[CreateAssetMenu(menuName = "Events/GameEvent")]
+public class GameEvent : ScriptableObject
 {
-    UnityEvent _unityEvent = new UnityEvent();
+    private readonly UnityEvent unityEvent = new UnityEvent();
 
-    public void AddListener(UnityAction listner)
+    // Add a listener to this event
+    public void AddListener(UnityAction listener)
     {
-        _unityEvent.AddListener(listner);
-    }
-   
-    public void RemoveListener(UnityAction listner)
-    {
-        _unityEvent.RemoveListener(listner);
+        unityEvent.AddListener(listener);
     }
 
+    // Remove a listener from this event
+    public void RemoveListener(UnityAction listener)
+    {
+        unityEvent.RemoveListener(listener);
+    }
+
+    // Invoke the event
     public void Invoke()
     {
-        _unityEvent.Invoke();
+        unityEvent.Invoke();
     }
 
     private void OnDisable()
     {
-        _unityEvent.RemoveAllListeners();
+        unityEvent.RemoveAllListeners(); // Clean up when disabled
     }
 }

@@ -1,10 +1,15 @@
 using UnityEngine;
 using UnityEngine.Events;
 
+public enum PanelName
+{
+    Header,MainMenu,Garage,Mode,Popup,Loading
+}
 [RequireComponent(typeof(CanvasGroup))]
 [DisallowMultipleComponent]
 public class Page : MonoBehaviour
 {
+    public PanelName panelName;
     SoundManager soundManager;
     private RectTransform RectTransform;
     private CanvasGroup CanvasGroup;

@@ -13,7 +13,7 @@ public class CarSelection : MonoBehaviour
     [SerializeField] private Button UnlockButton;
     [SerializeField] private TMP_Text carPriceText;
     [SerializeField]SoundManager soundManager;
-    [SerializeField] CarHoler carHolder;
+    [SerializeField] GameDataHolder carHolder;
     [SerializeField] Transform carHolderParent;
 
 

@@ -16,6 +16,8 @@ public class MenuController : MonoBehaviour
 
   [SerializeField]private Stack<Page> PageStack = new Stack<Page>();
 
+     private string _currentPageName;
+
     private void Awake()
     {
         RootCanvas = GetComponent<Canvas>();
@@ -78,7 +80,14 @@ public class MenuController : MonoBehaviour
             }
         }
         PageStack.Push(Page);
+ 
         Debug.Log(Page.gameObject.name);
+    }
+
+    public string GetCurrentPageName()
+    {
+        _currentPageName = PageStack.Peek().panelName.ToString();
+        return _currentPageName;
     }
 
     public void PopPage()
