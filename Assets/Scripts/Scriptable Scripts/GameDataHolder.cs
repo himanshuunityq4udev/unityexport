@@ -9,7 +9,7 @@ public class GameDataHolder : ScriptableObject
     public List<int> carsPrice = new List<int>();
 
     [Header("Unlocked Cars")]
-    public bool[] unlockedCard = new bool[10];
+    public bool[] unlockedCars = new bool[10];
 
 }
 

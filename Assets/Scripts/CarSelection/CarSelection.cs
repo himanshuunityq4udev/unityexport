@@ -43,7 +43,7 @@ public class CarSelection : MonoBehaviour
         nextButton.interactable = (_index != carHolderParent.childCount - 1);
         carPriceText.text = carHolder.carsPrice[currentCar].ToString();
 
-        if (carHolder.unlockedCard[currentCar])
+        if (carHolder.unlockedCars[currentCar])
         {
             SelectButton.gameObject.SetActive(true);
             UnlockButton.gameObject.SetActive(false);
