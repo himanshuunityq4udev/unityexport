@@ -44,8 +44,6 @@ public class SceneLoader : MonoBehaviour
 
     }
 
-
-
     IEnumerator loadLevelAsync(int levelIndex)
     {
         uiRefrenceProvider._MenuController.PushPage(uiRefrenceProvider.GetPageByName(PanelName.Loading.ToString()));

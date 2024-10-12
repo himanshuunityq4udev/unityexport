@@ -9,8 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1914440d26e04c84a89eade8146e0ef1, type: 3}
-  m_Name: GameDataHolder
+  m_Script: {fileID: 11500000, guid: 8b41e7b6a6268d34789d0c6db19d0f53, type: 3}
+  m_Name: NeedCoinPanel
   m_EditorClassIdentifier: 
-  carsPrice: 00000000f4010000e8030000d0070000ac0d00008e120000701700004c1d000028230000ec2c0000
-  unlockedCars: 01000000000000000000

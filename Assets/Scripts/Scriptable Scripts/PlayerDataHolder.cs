@@ -1,14 +1,11 @@
-using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Data/PlayerData", fileName = "PlayerDataHolder")]
 
 public class PlayerDataHolder : ScriptableObject
 {
-    public PlayerInfo playerInfo;
-   
+    public PlayerInfo playerInfo;  
 }
 
 [System.Serializable]

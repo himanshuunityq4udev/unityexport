@@ -1,20 +1,26 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
-public class PlayerDataManager : MonoBehaviour
+public class PlayerDataManager : Singleton<PlayerDataManager>
 {
     [SerializeField] PlayerDataHolder playerDataHolder;
     [SerializeField] GameDataHolder gameDataHolder;
 
+  
+    public PlayerDataHolder PlayerDataHolder { get => playerDataHolder; set => playerDataHolder = value; }
 
- 
+
+    protected override void Awake()
+    {
+        base.Awake();
+    }
     private void Start()
     {
-       LoadData();
+        LoadData();
     }
 
+  
     [ContextMenu("SaveData")]
     public async void SaveData()
     {
@@ -24,7 +30,7 @@ public class PlayerDataManager : MonoBehaviour
             bool saveSuccess = await DataSaver.SaveDataAsync(playerDataHolder.playerInfo, "players");
             if (saveSuccess)
             {
-               // Debug.Log("SaveCall");
+                // Debug.Log("SaveCall");
                 LoadData();
                 // UpdateCloudData();
             }
@@ -55,10 +61,10 @@ public class PlayerDataManager : MonoBehaviour
         }
         try
         {
-           // Debug.Log("Load call");
+            // Debug.Log("Load call");
 
             playerDataHolder.playerInfo = await DataSaver.LoadDataAsync<PlayerInfo>("players");
-      
+
             if (playerDataHolder.playerInfo == null)
             {
                 playerDataHolder.playerInfo = new PlayerInfo
@@ -66,7 +72,7 @@ public class PlayerDataManager : MonoBehaviour
                     Name = "Himanshu",
                     DimandPoints = 0,
                     HighScore = 0,
-                    Coins = 0,
+                    Coins = 500,
                     carUnlocked = carUnlockedIndices // Initialize with a list and add car 5
                 };
                 SaveData();
@@ -83,6 +89,16 @@ public class PlayerDataManager : MonoBehaviour
         {
             Debug.LogError($"Error loading data: {e.Message}");
         }
-        // UpdateCoinText.Invoke();
+        EventBus.Publish(new UpdateCoinTextEvent(playerDataHolder.playerInfo.Coins.ToString()));
+    }
+}
+
+public class UpdateCoinTextEvent
+{
+    public string coinText;
+
+    public UpdateCoinTextEvent(string _coinText)
+    {
+        coinText = _coinText;
     }
 }

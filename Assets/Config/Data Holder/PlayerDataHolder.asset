@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: PlayerDataHolder
   m_EditorClassIdentifier: 
   playerInfo:
-    Name: 
+    Name: Himanshu
     HighScore: 0
     Coins: 0
     DimandPoints: 0
-    carUnlocked: 
+    carUnlocked: 0000000003000000
