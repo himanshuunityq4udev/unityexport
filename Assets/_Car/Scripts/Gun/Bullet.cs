@@ -14,8 +14,11 @@ public class Bullet : MonoBehaviour
 
     public void OnCollisionEnter(Collision collision)
     {
-        collision.gameObject.GetComponent<Enemy>().Damage(50);
-        Destroy(gameObject);
+        if (collision.gameObject.GetComponent<Enemy>() != null)
+        {
+            collision.gameObject.GetComponent<Enemy>().Damage(50);
+            Destroy(gameObject);
+        }
     }
 
     IEnumerator DestroyAfterDelay()
